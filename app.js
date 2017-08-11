@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const path = require('path')
 
 // require my code (e.g. db and routes)
-const db = require('./models')
+const db = require('./models').db;
 const routes = require('./routes')
 
 // make an app instance of express
@@ -24,7 +24,9 @@ nunjucks.configure('views', {noCache: true})
 app.set('view engine', 'html')
 app.engine('html', nunjucks.render)
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname + '/public')))
+// app.use(express.static('public'));
+
 
 // do routes
 app.use(routes)
