@@ -25,6 +25,8 @@ app.set('view engine', 'html')
 app.engine('html', nunjucks.render)
 
 app.use(express.static(path.join(__dirname + '/public')))
+app.use(express.static(path.join(__dirname + '/node_modules/bootstrap/dist/')))
+app.use(express.static(path.join(__dirname + '/node_modules/jquery/dist')))
 // app.use(express.static('public'));
 
 

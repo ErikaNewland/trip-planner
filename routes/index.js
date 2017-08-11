@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
 				templateRestaurants: outerScopeContainer.restaurants,
 				templateActivities: activities
 			})
-				.catch(console.log)
+			.catch(next)
 		})
 	})
 
